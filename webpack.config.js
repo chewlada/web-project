@@ -1,38 +1,48 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const PugPlugin = require('pug-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: path.resolve(__dirname, 'src', 'index.js'),
-  output: {
-    filename: '[name].[contenthash].js',
-    path: path.resolve(__dirname, 'dist'),
-    clean: true
-  },
-
   plugins: [
-    new HtmlWebpackPlugin({template: path.resolve(__dirname, 'src', 'index.html')}),
-    new MiniCssExtractPlugin({filename: 'build.css'}),
+    new PugPlugin({
+      entry: {
+        // define page templates
+        index: 'src/index.pug', //=> dist/index.html
+      },
+      js: {
+        // JS output filename
+        filename: 'js/[name].[contenthash:8].js',
+      },
+      css: {
+        // CSS output filename
+        filename: 'css/[name].[contenthash:8].css',
+      },
+    }),
   ],
 
   module: {
     rules: [
       {
-        test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
+        test: /\.(s?css|sass)$/,
+        use: ['css-loader'/*, 'sass-loader'*/],
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        test: /\.(ico|png|jpg|jpeg|gif)$/,
         type: 'asset/resource',
+        generator: {
+          filename: 'images/[name].[hash:8][ext]',
+        },
       },
       {
-        test: /\.(ttf|woff|woff2)$/i,
+        test: /\.(ttf|woff|woff2|svg)$/,
         type: 'asset/resource',
+        generator: {
+          filename: 'fonts/[name].[hash:8][ext]',
+        },
       },
-    ]
-  }
-}
+    ],
+  },
+};
 
 
 
