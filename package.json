@@ -1,11 +1,11 @@
 {
   "devDependencies": {
+    "css-loader": "^7.1.2",
     "html-webpack-plugin": "^5.6.0",
     "mini-css-extract-plugin": "^2.9.0",
     "pug": "^3.0.3",
     "pug-plugin": "^5.3.0",
     "sass-loader": "^14.2.1",
-    "css-loader": "^7.1.2",
     "style-loader": "^4.0.0",
     "webpack": "^5.92.1",
     "webpack-cli": "^5.1.4"
@@ -62,6 +62,7 @@
     "mime-types": "^2.1.35",
     "neo-async": "^2.6.2",
     "node-releases": "^2.0.14",
+    "normalize.css": "^8.0.1",
     "p-limit": "^2.3.0",
     "p-locate": "^4.1.0",
     "p-try": "^2.2.0",
