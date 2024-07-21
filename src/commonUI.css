@@ -2,15 +2,39 @@
 @import url('fonts.css');
 
 body {
+  width: 1440px;
   font-family: 'Montserrat Regular', sans-serif;
   font-size: 14px;
   color: #1F2041BF;
   line-height: 24px;
 }
 
+.logo {
+  position: fixed;
+  top: 30px;
+  left: 30px;
+  height: 48px;
+}
+
+.colors-types {
+  display: flex;
+  width: 1132px;
+  margin-top: 145px;
+  margin-left: 150px;
+  justify-content: space-between;
+}
+
+.colors-img {
+  width: 70px;
+  height: 70px;
+  border-radius: 6px;
+  background: rgb(31, 32, 65);
+}
+
 h1 {
   font-family: 'Montserrat Bold', sans-serif;
   font-size: 24px;
-  color: #1F2041;
-  line-height: 29.26px;
+  color: rgb(31, 32, 65);
+  line-height: 29px;
 }
+
