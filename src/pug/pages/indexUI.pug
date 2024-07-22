@@ -15,18 +15,38 @@ html(lang='ru')
 				path#Vector(d='M36.7 19.76C36.7 20.54 36.07 21.17 35.29 21.17C31.94 21.17 28.94 22.87 27.17 25.44C26.78 24.45 26.33 23.54 25.76 22.69C28.09 20.01 31.51 18.35 35.29 18.35C36.07 18.35 36.7 18.98 36.7 19.76Z', fill='#1F2041', fill-opacity='0.250000', fill-rule='nonzero')
 				path#Vector(d='M24 48C10.76 48 0 37.23 0 24C0 10.76 10.76 0 24 0C37.23 0 48 10.76 48 24C48 37.23 37.23 48 24 48ZM24 2.82C12.31 2.82 2.82 12.31 2.82 24C2.82 35.68 12.31 45.17 24 45.17C35.68 45.17 45.17 35.68 45.17 24C45.17 12.31 35.68 2.82 24 2.82Z', fill='#1F2041', fill-opacity='0.250000', fill-rule='nonzero')
 		
-		.colors-types
-			.colors
+		//.colors-types
+			.colors__wrapper
 				- for (var i = 0; i < 7; i++)
-					.colors-form
-						.colors-img
-						.colors-desc
+					.colors__form
+						.colors__img
+						.colors__desc
 							p !{name[i]}
 							p !{color[i]}
-			.types
+			.types__wrapper
 				- for (var i = 0; i < 4; i++)
 					.types__form
 						.types__item
 							p !{sign[i]}
-						.types_desc
+						.types__desc
 							p !{desc[i]}
+		.colors-types
+			.colors__wrapper
+				- for (var i = 0; i < 7; i++)
+					.colors__form
+						.colors__img
+						.colors__desc
+							p !{name[i]}
+							p !{color[i]}
+			.types__wrapper
+				ul.types__item
+					- for (var i = 0; i < 4; i++)
+						li !{sign[i]}
+				ul.types__desc
+					- for (var i = 0; i < 4; i++)
+						li !{desc[i]}
+
+
+
+
+
