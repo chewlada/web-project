@@ -3,11 +3,20 @@ const PugPlugin = require('pug-plugin');
 
 module.exports = {
   mode: 'development',
+  devServer: {
+    static: {
+      directory: path.join(__dirname, 'dist'), // Каталог для статики
+    },
+    open: true,
+    compress: true,
+    port: 8080,
+  },
+
   plugins: [
     new PugPlugin({
       entry: {
         // define page templates
-        indexUI: 'src/pug/pages/indexUI.pug' //=> dist/indexUI.html
+        indexUI: 'src/pages/indexUI.pug' //=> dist/indexUI.html
       },
       js: {
         // JS output filename
