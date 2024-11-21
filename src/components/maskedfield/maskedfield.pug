@@ -1,0 +1,12 @@
+include ../mixins/label/label.pug
+
+.textfield__content
+	+label('Masked Text Field')(class='textfield__label' for='date')
+	input(
+		class='textfield__input'
+		type='date'
+		id='date' 
+		name='date'
+		value="ДД.ММ.ГГГГ" 
+		min="2025-01-01" 
+		max="2025-12-31")

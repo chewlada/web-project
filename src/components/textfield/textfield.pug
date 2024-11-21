@@ -1,13 +1,12 @@
 include ../mixins/label/label.pug
 
-form(class='textfield' action='' method='')
-	.textfield__content
-		+label('Text Field')(class='textfield__label' for='text')
-		input(
-			class='textfield_input'
-			id='text' 
-			type='text' 
-			name='text' 
-			placeholder='Email' 
-			autocomplete='off'
-			required)
+.textfield__content
+	+label('Text Field')(class='textfield__label' for='text')
+	input(
+		class='textfield__input'
+		id='text' 
+		type='text' 
+		name='text' 
+		placeholder='Email' 
+		autocomplete='off'
+		required)

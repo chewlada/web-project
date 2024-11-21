@@ -6,23 +6,28 @@
 	gap: 5px;
 }
 
-input:placeholder-shown {
-	font: 14px/24px 'Montserrat Regular', sans-serif;
-	color: rgba(31, 32, 65, 0.25);
-}
-
-input {
+.textfield__input {
 	width: 320px;
 	height: 44px;
-	border-width: 1px;
+	border: 1px solid;
 	border-radius: 4px;
 	border-color: rgba(31, 32, 65, 0.25);
 }
 
-input:focus {
+.textfield__input::placeholder {
+	display: inline-block;
+	font: 14px 'Montserrat Regular', sans-serif;
+	line-height: 24px;
+	color: rgba(31, 32, 65, 0.25);
+	padding-left: 15px;
+}
+
+.textfield__input:focus,
+.textfield__input:hover {
 	border-color: rgba(31, 32, 65, 0.5);
 }
 
-input:placeholder-shown:focus {
+.textfield__input:focus::placeholder,
+.textfield__input:hover::placeholder {
 	color: rgba(31, 32, 65, 0.75);
 }
